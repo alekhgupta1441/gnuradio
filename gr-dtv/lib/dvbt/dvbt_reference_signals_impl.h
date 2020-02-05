@@ -2,20 +2,8 @@
 /*
  * Copyright 2015 Free Software Foundation, Inc.
  *
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
  */
 
 #ifndef INCLUDED_DTV_DVBT_REFERENCE_SIGNALS_IMPL_H
@@ -27,16 +15,16 @@
 #include <vector>
 
 // This should eventually go into a const file
-const int SYMBOLS_PER_FRAME = 68;
-const int FRAMES_PER_SUPERFRAME = 4;
+constexpr int SYMBOLS_PER_FRAME = 68;
+constexpr int FRAMES_PER_SUPERFRAME = 4;
 
-const int SCATTERED_PILOT_SIZE_2k = 142;
-const int CONTINUAL_PILOT_SIZE_2k = 45;
-const int TPS_PILOT_SIZE_2k = 17;
+constexpr int SCATTERED_PILOT_SIZE_2k = 142;
+constexpr int CONTINUAL_PILOT_SIZE_2k = 45;
+constexpr int TPS_PILOT_SIZE_2k = 17;
 
-const int SCATTERED_PILOT_SIZE_8k = 568;
-const int CONTINUAL_PILOT_SIZE_8k = 177;
-const int TPS_PILOT_SIZE_8k = 68;
+constexpr int SCATTERED_PILOT_SIZE_8k = 568;
+constexpr int CONTINUAL_PILOT_SIZE_8k = 177;
+constexpr int TPS_PILOT_SIZE_8k = 68;
 
 namespace gr {
 namespace dtv {

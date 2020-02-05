@@ -4,20 +4,8 @@
  *
  * This file is part of GNU Radio
  *
- * GNU Radio is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3, or (at your option)
- * any later version.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * GNU Radio is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with GNU Radio; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
  */
 
 #ifdef HAVE_CONFIG_H
@@ -114,9 +102,8 @@ int tag_debug_impl::work(int noutput_items,
             for (const auto& tag : d_tags) {
                 sout << std::setw(10) << "Offset: " << tag.offset << std::setw(10)
                      << "Source: "
-                     << (pmt::is_symbol(tag.srcid)
-                             ? pmt::symbol_to_string(tag.srcid)
-                             : "n/a")
+                     << (pmt::is_symbol(tag.srcid) ? pmt::symbol_to_string(tag.srcid)
+                                                   : "n/a")
                      << std::setw(10) << "Key: " << pmt::symbol_to_string(tag.key)
                      << std::setw(10) << "Value: ";
                 sout << tag.value << std::endl;

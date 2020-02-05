@@ -2,20 +2,8 @@
 /*
  * Copyright 2015 Free Software Foundation, Inc.
  *
- * This is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published
- * by the Free Software Foundation; either version 3, or (at your
- * option) any later version.
+ * SPDX-License-Identifier: GPL-3.0-or-later
  *
- * This software is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this software; see the file COPYING.  If not, write to
- * the Free Software Foundation, Inc., 51 Franklin Street,
- * Boston, MA 02110-1301, USA.
  */
 
 #ifdef HAVE_CONFIG_H
@@ -397,7 +385,7 @@ gsl_matrix* fec_mtrx_impl::calc_inverse_mod2(const gsl_matrix* original_matrix) 
 
     if (status) {
         // Inverse not found by GSL functions.
-        throw "Error in calc_inverse_mod2(): inverse not found.\n";
+        throw "Error in calc_inverse_mod2(): inverse not found.";
     }
 
     // Find determinant
@@ -422,7 +410,7 @@ gsl_matrix* fec_mtrx_impl::calc_inverse_mod2(const gsl_matrix* original_matrix) 
 
     int max_value = gsl_matrix_max(matrix_inverse);
     if (!max_value) {
-        throw "Error in calc_inverse_mod2(): The matrix inverse found is all zeros.\n";
+        throw "Error in calc_inverse_mod2(): The matrix inverse found is all zeros.";
     }
 
     // Verify that the inverse was found by taking matrix
@@ -439,7 +427,7 @@ gsl_matrix* fec_mtrx_impl::calc_inverse_mod2(const gsl_matrix* original_matrix) 
     double test_if_not_equal = gsl_matrix_max(identity);
 
     if (test_if_not_equal > 0) {
-        throw "Error in calc_inverse_mod2(): The matrix inverse found is not valid.\n";
+        throw "Error in calc_inverse_mod2(): The matrix inverse found is not valid.";
     }
 
     return matrix_inverse;
